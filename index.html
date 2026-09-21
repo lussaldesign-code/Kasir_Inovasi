@@ -19,8 +19,8 @@
         body { background-color: var(--bg-color); color: var(--text-main); height: 100vh; display: flex; overflow: hidden; }
 
         /* ================= DESAIN LOGIN ================= */
-        #loginScreen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-color); display: flex; justify-content: center; align-items: center; z-index: 9999; }
-        .login-box { background: white; padding: 30px; border-radius: 12px; box-shadow: var(--card-shadow); width: 340px; text-align: center; }
+        #loginScreen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-color); display: flex; justify-content: center; align-items: center; z-index: 9999; padding: 15px; }
+        .login-box { background: white; padding: 30px; border-radius: 12px; box-shadow: var(--card-shadow); width: 100%; max-width: 340px; text-align: center; }
         .login-box h2 { margin-bottom: 20px; color: var(--primary); }
         .password-wrapper { position: relative; display: flex; align-items: center; }
         .password-wrapper input { padding-right: 40px; }
@@ -29,50 +29,50 @@
         /* ================= DESAIN UMUM & LAYOUT ================= */
         .input-group { margin-bottom: 15px; text-align: left; }
         .input-group label { display: block; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 5px; font-weight: 600; }
-        .input-group input, .input-group select { width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 6px; outline: none; }
+        .input-group input, .input-group select { width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 6px; outline: none; font-size: 0.9rem; }
         .btn-primary { width: 100%; padding: 12px; background: var(--primary); color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; transition: 0.2s; }
         .btn-primary:hover { background: var(--primary-hover); }
         .btn-sm { background: var(--primary); color: white; border: none; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-size: 0.8rem; font-weight: 600; }
         .btn-danger { background: var(--danger); }
 
         #appScreen { display: none; width: 100%; height: 100%; padding: 15px; gap: 15px; }
-        .main-content { flex: 1; display: flex; flex-direction: column; height: 100%; overflow: hidden; }
+        .main-content { flex: 1; display: flex; flex-direction: column; height: 100%; overflow: hidden; min-width: 0; }
         
         .tab-pane { display: none !important; height: 100%; width: 100%; gap: 15px; flex-direction: column; }
         .tab-pane.active { display: flex !important; }
         
         .panel { background: #ffffff; border-radius: 16px; box-shadow: var(--card-shadow); display: flex; flex-direction: column; flex: 1; overflow: hidden; }
-        .header { padding: 15px 20px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+        .header { padding: 15px 20px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
         .table-container { padding: 20px; overflow-y: auto; flex: 1; }
         table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
         th, td { text-align: left; padding: 10px; border-bottom: 1px solid var(--border); }
         th { background: var(--secondary); position: sticky; top: 0; }
 
-        /* ================= SIDEBAR ================= */
-        .sidebar { width: 80px; background: white; border-radius: 16px; display: flex; flex-direction: column; align-items: center; padding: 20px 0; gap: 10px; box-shadow: var(--card-shadow); }
+        /* ================= SIDEBAR (RESPONSIF) ================= */
+        .sidebar { width: 80px; background: white; border-radius: 16px; display: flex; flex-direction: column; align-items: center; padding: 20px 0; gap: 10px; box-shadow: var(--card-shadow); flex-shrink: 0; }
         .nav-item { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 65px; height: 65px; border-radius: 12px; cursor: pointer; color: var(--text-muted); font-size: 0.65rem; font-weight: 600; text-align: center; }
         .nav-item:hover, .nav-item.active { background: #ecfdf5; color: var(--primary); }
         .nav-icon { font-size: 1.4rem; margin-bottom: 4px; }
         .btn-logout { margin-top: auto; color: var(--danger); }
 
         /* ================= HALAMAN KASIR ================= */
-        .tools-bar { display: flex; gap: 10px; flex: 1; min-width: 200px; }
-        .search-input, .filter-select { padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; outline: none; }
-        .search-input { flex: 1; }
+        .tools-bar { display: flex; gap: 10px; flex: 1; min-width: 200px; flex-wrap: wrap; }
+        .search-input, .filter-select { padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; outline: none; font-size: 0.85rem; }
+        .search-input { flex: 1; min-width: 140px; }
         
         .katalog-panel { flex: 7; display: flex; flex-direction: column; }
         #wrapperKatalog { padding: 15px; overflow-y: auto; flex: 1; }
         .category-title { font-size: 1rem; color: var(--text-main); font-weight: 700; margin-bottom: 12px; padding-bottom: 5px; border-bottom: 2px solid var(--border); }
-        .product-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 15px; margin-bottom: 20px; }
+        .product-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 15px; margin-bottom: 20px; }
         
         .product-card { background: var(--secondary); border: 1px solid var(--border); border-radius: 10px; cursor: pointer; text-align: center; display: flex; flex-direction: column; position: relative; overflow: hidden; }
         .product-card:hover { border-color: var(--primary); }
-        .p-img { width: 100%; height: 100px; object-fit: cover; background: #e2e8f0; }
+        .p-img { width: 100%; height: 95px; object-fit: cover; background: #e2e8f0; }
         .p-info { padding: 10px; flex: 1; }
         .btn-edit-card { position: absolute; top: 5px; right: 5px; background: white; border: 1px solid var(--border); border-radius: 50%; width: 28px; height: 28px; cursor: pointer; font-size: 0.8rem; z-index: 3; }
         .badge-habis { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255,255,255,0.7); display: flex; justify-content: center; align-items: center; color: red; font-weight: bold; font-size: 1.2rem; z-index: 4; }
 
-        .cart-panel { flex: 3; min-width: 320px; display: flex; flex-direction: column; }
+        .cart-panel { flex: 3; min-width: 300px; display: flex; flex-direction: column; }
         .cart-items { flex: 1; overflow-y: auto; padding: 15px; }
         .cart-item { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed var(--border); padding-bottom: 10px; margin-bottom: 10px; }
         .qty-btn { width: 24px; height: 24px; border: 1px solid var(--border); background: white; cursor: pointer; border-radius: 4px; }
@@ -80,15 +80,16 @@
 
         /* ================= HALAMAN LAPORAN ================= */
         .dashboard-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; padding: 20px 20px 0 20px; }
-        .dash-card { background: white; padding: 20px; border-radius: 12px; border: 1px solid var(--border); text-align: center; }
-        .dash-card h4 { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 8px; }
+        .dash-card { background: white; padding: 15px; border-radius: 12px; border: 1px solid var(--border); text-align: center; }
+        .dash-card h4 { color: var(--text-muted); font-size: 0.75rem; margin-bottom: 6px; }
+        .dash-card h2 { font-size: 1.1rem; }
         .laporan-sections { display: flex; gap: 20px; padding: 20px; flex: 1; overflow: hidden; }
         .laporan-box { flex: 1; background: white; border: 1px solid var(--border); border-radius: 12px; display: flex; flex-direction: column; overflow: hidden; }
         .laporan-box h3 { padding: 15px; background: var(--secondary); border-bottom: 1px solid var(--border); font-size: 0.9rem; }
         .laporan-content { padding: 15px; overflow-y: auto; flex: 1; }
 
         /* ================= MODAL / POPUP ================= */
-        .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); display: none; justify-content: center; align-items: center; z-index: 1000; }
+        .modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); display: none; justify-content: center; align-items: center; z-index: 1000; padding: 15px; }
         .modal-overlay.active { display: flex; }
         .modal-card { background: white; padding: 24px; border-radius: 12px; width: 100%; max-width: 450px; max-height: 90vh; overflow-y: auto; }
         .modal-actions { display: flex; gap: 10px; margin-top: 20px; }
@@ -98,6 +99,27 @@
         .price-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; background: var(--secondary); padding: 10px; border-radius: 8px; margin-bottom: 10px; border: 1px solid var(--border); }
         .price-select-btn { padding: 15px; background: white; border: 1px solid var(--border); border-radius: 8px; cursor: pointer; text-align: left; }
         .price-select-btn:hover { border-color: var(--primary); background: #ecfdf5; }
+
+        /* ================= MEDIA QUERY MOBILE (LAYAR < 768px) ================= */
+        @media (max-width: 768px) {
+            body { flex-direction: column; height: 100vh; overflow: auto; }
+            #appScreen { flex-direction: column-reverse; padding: 10px; gap: 10px; height: auto; overflow: visible; }
+            
+            /* Sidebar dipindah ke bawah sebagai Navigasi Menu Bottom Bar */
+            .sidebar { width: 100%; height: 60px; flex-direction: row; justify-content: space-around; padding: 0 5px; position: fixed; bottom: 0; left: 0; z-index: 999; border-radius: 0; box-shadow: 0 -2px 10px rgba(0,0,0,0.1); }
+            .nav-item { width: auto; height: 100%; flex: 1; border-radius: 0; font-size: 0.55rem; padding: 5px 0; }
+            .nav-icon { font-size: 1.1rem; margin-bottom: 2px; }
+            .btn-logout { margin-top: 0; }
+
+            .main-content { height: calc(100vh - 75px); overflow-y: auto; padding-bottom: 70px; }
+            #tab-kasir { flex-direction: column !important; gap: 10px; }
+            
+            .cart-panel { min-width: 100%; }
+            .dashboard-cards { grid-template-columns: 1fr; gap: 10px; padding: 10px 10px 0 10px; }
+            .laporan-sections { flex-direction: column; padding: 10px; gap: 10px; overflow: visible; }
+            .laporan-box { max-height: 300px; }
+            .table-container { padding: 10px; }
+        }
 
         @media print {
             body * { visibility: hidden; }
@@ -137,7 +159,7 @@
     <!-- ================= 2. LAYAR UTAMA APLIKASI ================= -->
     <div id="appScreen">
         
-        <!-- SIDEBAR NAVIGASI -->
+        <!-- SIDEBAR / BOTTOM NAVIGASI MOBILE -->
         <nav class="sidebar">
             <div class="nav-item active" onclick="switchTab('kasir', this)"><span class="nav-icon">🛒</span>Kasir</div>
             <div class="nav-item" onclick="switchTab('agen', this)"><span class="nav-icon">👥</span>Agen</div>
@@ -223,9 +245,9 @@
                 <div id="areaLaporanCetak" class="panel">
                     <header class="header">
                         <h2>Dashboard & Laporan</h2>
-                        <div style="display:flex; gap:10px;">
+                        <div style="display:flex; gap:10px; flex-wrap: wrap;">
                             <button class="btn-sm" onclick="aturNomorWA()" style="background: var(--warning);">⚙️ Set No WA</button>
-                            <button class="btn-sm" onclick="cetakArea('areaLaporanCetak')" style="background: var(--info);">🖨️ Cetak Kertas (A4)</button>
+                            <button class="btn-sm" onclick="cetakArea('areaLaporanCetak')" style="background: var(--info);">🖨️ Cetak (A4)</button>
                             <button class="btn-sm" onclick="kirimLaporanWA()" style="background: #25D366;">📱 WA Laporan</button>
                         </div>
                     </header>
